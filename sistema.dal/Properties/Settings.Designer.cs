@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Login.Properties {
+namespace sistema.dal.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,22 +26,10 @@ namespace Login.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-488OEO7;Initial Catalog=BancoVeterinária;Integrated Security=" +
-            "True")]
-        public string BancoVeterináriaConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-488OEO7;Initial Catalog=bancovet;Integrated Security=True")]
+        public string bancovetConnectionString {
             get {
-                return ((string)(this["BancoVeterináriaConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-488OEO7;Initial Catalog=BancoVeterinaria;Integrated Security=" +
-            "True")]
-        public string BancoVeterinariaConnectionString {
-            get {
-                return ((string)(this["BancoVeterinariaConnectionString"]));
+                return ((string)(this["bancovetConnectionString"]));
             }
         }
     }

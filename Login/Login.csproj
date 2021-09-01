@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,7 +36,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>3</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +50,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,19 +68,6 @@
     <Compile Include="Apresentação\Cadastrar.Designer.cs">
       <DependentUpon>Cadastrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\Agendamento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modelo\Agendamento.Designer.cs">
-      <DependentUpon>Agendamento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\CadAnimal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modelo\CadAnimal.Designer.cs">
-      <DependentUpon>CadAnimal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\CadCliente1.cs" />
     <Compile Include="Apresentação\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,11 +76,6 @@
     </Compile>
     <Compile Include="Apresentação\SplashScreen1.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BancoVeterináriaDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BancoVeterináriaDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dao\Conexao.cs" />
     <Compile Include="Dao\logindao.cs" />
@@ -95,33 +93,58 @@
     <Compile Include="Dao\MenuStrip.Designer.cs">
       <DependentUpon>MenuStrip.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\CadCliente.cs">
+    <Compile Include="frmpesquisarcliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modelo\CadCliente.Designer.cs">
-      <DependentUpon>CadCliente.cs</DependentUpon>
+    <Compile Include="frmpesquisarcliente.Designer.cs">
+      <DependentUpon>frmpesquisarcliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\CadRaca.cs">
+    <Compile Include="Modelo\frmAgendamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modelo\CadRaca.Designer.cs">
-      <DependentUpon>CadRaca.cs</DependentUpon>
+    <Compile Include="Modelo\frmAgendamento.Designer.cs">
+      <DependentUpon>frmAgendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\frmCadAnimal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\frmCadAnimal.Designer.cs">
+      <DependentUpon>frmCadAnimal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\frmCadClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\frmCadClientes.Designer.cs">
+      <DependentUpon>frmCadClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\frmCadRaca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\frmCadRaca.Designer.cs">
+      <DependentUpon>frmCadRaca.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Controle.cs" />
-    <Compile Include="Modelo\MenuVet.cs">
+    <Compile Include="Modelo\frmmenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modelo\MenuVet.Designer.cs">
-      <DependentUpon>MenuVet.cs</DependentUpon>
+    <Compile Include="Modelo\frmmenu.Designer.cs">
+      <DependentUpon>frmmenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\Servicos.cs">
+    <Compile Include="Modelo\frmServicos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modelo\Servicos.Designer.cs">
-      <DependentUpon>Servicos.cs</DependentUpon>
+    <Compile Include="Modelo\frmServicos.Designer.cs">
+      <DependentUpon>frmServicos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\relatorioagendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\relatorioagendamento.Designer.cs">
+      <DependentUpon>relatorioagendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sistema\dal\CadCliente.cs" />
     <EmbeddedResource Include="..\..\..\..\Desktop\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <Link>Apresentação\Form1.resx</Link>
@@ -135,39 +158,43 @@
     <EmbeddedResource Include="Dao\MenuStrip.resx">
       <DependentUpon>MenuStrip.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modelo\Agendamento.resx">
-      <DependentUpon>Agendamento.cs</DependentUpon>
+    <EmbeddedResource Include="frmpesquisarcliente.resx">
+      <DependentUpon>frmpesquisarcliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modelo\CadAnimal.resx">
-      <DependentUpon>CadAnimal.cs</DependentUpon>
+    <EmbeddedResource Include="Modelo\frmAgendamento.resx">
+      <DependentUpon>frmAgendamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modelo\CadCliente.resx">
-      <DependentUpon>CadCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Modelo\frmCadAnimal.resx">
+      <DependentUpon>frmCadAnimal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modelo\CadRaca.resx">
-      <DependentUpon>CadRaca.cs</DependentUpon>
+    <EmbeddedResource Include="Modelo\frmCadClientes.resx">
+      <DependentUpon>frmCadClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modelo\MenuVet.resx">
-      <DependentUpon>MenuVet.cs</DependentUpon>
+    <EmbeddedResource Include="Modelo\frmCadRaca.resx">
+      <DependentUpon>frmCadRaca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modelo\Servicos.resx">
-      <DependentUpon>Servicos.cs</DependentUpon>
+    <EmbeddedResource Include="Modelo\frmmenu.resx">
+      <DependentUpon>frmmenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\frmServicos.resx">
+      <DependentUpon>frmServicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="BancoVeterináriaDataSet.xsc">
-      <DependentUpon>BancoVeterináriaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BancoVeterináriaDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BancoVeterináriaDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BancoVeterináriaDataSet.xss">
-      <DependentUpon>BancoVeterináriaDataSet.xsd</DependentUpon>
-    </None>
+    <EmbeddedResource Include="Relatorios\relatorioagendamento.resx">
+      <DependentUpon>relatorioagendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\Report1.rdlc" />
+    <EmbeddedResource Include="Relatorios\Report2.rdlc" />
+    <None Include="Properties\DataSources\sistema.dal.CadCliente.datasource" />
+    <None Include="Properties\DataSources\sistema.dal.tb_agendamento.datasource" />
+    <None Include="Properties\DataSources\sistema.dal.tb_agendservico.datasource" />
+    <None Include="Properties\DataSources\sistema.dal.tb_cadanimal.datasource" />
+    <None Include="Properties\DataSources\sistema.dal.tb_cadcliente.datasource" />
+    <None Include="Properties\DataSources\sistema.dal.tb_raca.datasource" />
+    <None Include="Properties\DataSources\sistema.dal.tb_servico.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -192,6 +219,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Imagens utilizadas\minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\sistema.dal\sistema.dal.csproj">
+      <Project>{7c58afa3-7a43-4f3f-8e54-046239b75c46}</Project>
+      <Name>sistema.dal</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bancovet" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-488OEO7;Initial Catalog=bancovet;Integrated Security=True" SettingsObjectName="sistema.dal.Properties.Settings" SettingsPropertyName="bancovetConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tb_agendamento" Member="tb_agendamento">
+    <Type Name="tb_agendamento">
+      <Column Name="ag_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ag_data" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ag_horario" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ag_situacao" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ag_animal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ag_total" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_agendservico" Member="tb_agendservico">
+    <Type Name="tb_agendservico">
+      <Column Name="ag_serv_numero" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ag_serv_agendamento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ag_serv_servico" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ag_serv_quantidade" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ag_serv_valor_unitario" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_cadanimal" Member="tb_cadanimal">
+    <Type Name="tb_cadanimal">
+      <Column Name="ani_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ani_nome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ani_sexo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ani_agressivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ani_cor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ani_idade" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ani_alergia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ani_cliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ani_raca" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ani_foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_cadcliente" Member="tb_cadcliente">
+    <Type Name="tb_cadcliente">
+      <Column Name="cli_nome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cli_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cli_celular" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cli_email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cli_cpf" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cli_endereco" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_servico" Member="tb_servico">
+    <Type Name="tb_servico">
+      <Column Name="serv_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="serv_descricao" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="serv_preco" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="serv_tempo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_raca" Member="tb_raca">
+    <Type Name="tb_raca">
+      <Column Name="raca_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="raca_nome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="raca_pais_origem" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
